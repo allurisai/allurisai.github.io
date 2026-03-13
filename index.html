@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sai Vignesh Alluri | Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+
+  <!-- ANIMATED BACKGROUND -->
+  <div class="bg-animation">
+    <div class="bg-line"></div>
+    <div class="bg-line"></div>
+    <div class="bg-line"></div>
+    <div class="bg-line"></div>
+    <div class="bg-line"></div>
+    <div class="bg-orb bg-orb-1"></div>
+    <div class="bg-orb bg-orb-2"></div>
+    <div class="bg-orb bg-orb-3"></div>
+  </div>
+
+  <!-- LOADING SCREEN -->
+  <div id="loader">
+    <div class="loader-content">
+      <div class="loader-name">S V A</div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+      <div class="loader-text">Initializing Portfolio...</div>
+    </div>
+  </div>
+
+  <!-- SCROLL PROGRESS BAR -->
+  <div id="scroll-progress"></div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <ul class="nav-links">
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#education" class="nav-link">Education</a></li>
+      <li><a href="#experience" class="nav-link">Experience</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#publications" class="nav-link">Publications</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-controls">
+      <button id="themeToggle" class="theme-toggle-btn" title="Toggle Theme">🌙</button>
+      <button id="musicBtn" class="music-btn" title="Play Music">
+        <i class="fas fa-music"></i>
+        <span class="music-label">Music</span>
+      </button>
+    </div>
+    <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about" class="mob-link">About</a>
+    <a href="#education" class="mob-link">Education</a>
+    <a href="#experience" class="mob-link">Experience</a>
+    <a href="#projects" class="mob-link">Projects</a>
+    <a href="#publications" class="mob-link">Publications</a>
+    <a href="#skills" class="mob-link">Skills</a>
+    <a href="#contact" class="mob-link">Contact</a>
+  </div>
+
+  <!-- NOW PLAYING BAR -->
+  <div id="nowPlaying" class="now-playing hidden">
+    <i class="fas fa-wave-square"></i>
+    <span class="song-ticker">♪ Ambient Portfolio Mix &nbsp;&nbsp;&nbsp;♪ Ambient Portfolio Mix &nbsp;&nbsp;&nbsp;</span>
+    <div class="volume-wrap">
+      <i class="fas fa-volume-up"></i>
+      <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.5"/>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section id="about" class="hero active-page">
+    <canvas id="particleCanvas"></canvas>
+
+    <div class="hero-content fade-up">
+      <div class="hero-greeting-wrap">
+        <span class="hero-greeting">Hi, I'm</span>
+      </div>
+      <h1 class="hero-name">
+        <span id="typedName"></span>
+      </h1>
+      <h2 class="hero-subtitle">Master's CS Student · ML · SWE · Data Science</h2>
+      <p class="hero-bio">
+        I started with a curiosity for how things work and turned it into a Computer Science
+        degree, two industry internships, and two published IEEE research papers before
+        finishing my Bachelor's. Now I'm at the University of Utah completing my Master's,
+        sharpening my skills across software engineering, machine learning, data science,
+        and full-stack development. I don't just want to write code. I want to build things
+        that matter, work with people who care, and keep growing every single day.
+        If that sounds like someone you're looking for, let's talk.
+      </p>
+
+      <div class="hero-socials">
+        <a href="https://github.com/allurisai" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="mailto:allurisaijobs15@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">
+          <i class="fas fa-envelope"></i> Get in Touch
+        </a>
+        <a href="assets/resume.pdf" download="Sai_Vignesh_Resume.pdf" class="btn-secondary">
+          <i class="fas fa-download"></i> Download Resume
+        </a>
+      </div>
+
+      <div class="hero-tech">
+        <p class="hero-tech-label">TECHNOLOGIES</p>
+        <div class="hero-tech-icons">
+          <div class="tech-icon" title="Python">
+            <i class="fab fa-python"></i>
+            <span>Python</span>
+          </div>
+          <div class="tech-icon" title="TensorFlow">
+            <i class="fas fa-brain"></i>
+            <span>TensorFlow</span>
+          </div>
+          <div class="tech-icon" title="React">
+            <i class="fab fa-react"></i>
+            <span>React</span>
+          </div>
+          <div class="tech-icon" title="Node.js">
+            <i class="fab fa-node-js"></i>
+            <span>Node.js</span>
+          </div>
+          <div class="tech-icon" title="Docker">
+            <i class="fab fa-docker"></i>
+            <span>Docker</span>
+          </div>
+          <div class="tech-icon" title="GitHub">
+            <i class="fab fa-github"></i>
+            <span>Git</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="avail-inline">
+        <span class="avail-dot"></span> Open to Work · Entry Level · Full Time
+      </div>
+
+    </div>
+
+    <div class="scroll-hint"><i class="fas fa-chevron-down"></i></div>
+  </section>
+
+  <!-- EDUCATION SECTION -->
+  <section id="education" class="section">
+    <div class="section-container">
+      <div class="section-header fade-up">
+        <span class="section-index">01.</span>
+        <h2 class="section-title">Education</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="edu-timeline fade-up">
+
+        <div class="edu-card">
+          <div class="edu-card-top-bar"></div>
+          <div class="edu-card-inner">
+            <div class="edu-icon">
+              <a href="https://www.utah.edu/" target="_blank">
+                <img src="assets/utah-logo.png" alt="University of Utah"/>
+              </a>
+            </div>
+            <div class="edu-content">
+              <div class="edu-top">
+                <div>
+                  <div class="edu-badges">
+                    <span class="edu-badge master">Master's</span>
+                    <span class="edu-badge current">Current</span>
+                  </div>
+                  <h3 class="edu-school">
+                    <a href="https://www.utah.edu/" target="_blank">University of Utah</a>
+                  </h3>
+                  <p class="edu-degree">Master of Science, Computer Science</p>
+                </div>
+                <div class="edu-meta">
+                  <span class="edu-date"><i class="fas fa-calendar"></i> Aug 2024 – Present</span>
+                  <span class="edu-gpa">GPA: 3.53 / 4.0</span>
+                  <span class="edu-location"><i class="fas fa-map-marker-alt"></i> Salt Lake City, UT</span>
+                </div>
+              </div>
+              <ul class="edu-highlights">
+                <li>Exploring research opportunities in ML systems and data engineering — looking to contribute to impactful work at the intersection of AI and real-world applications.</li>
+                <li>Maintaining a 3.53 GPA while working on advanced coursework in Machine Learning, Algorithms, and Systems Security.</li>
+                <li>Actively building projects in ML, data engineering, and full-stack development alongside academics.</li>
+              </ul>
+              <div class="edu-courses">
+                <p class="courses-label">Relevant Coursework:</p>
+                <div class="course-tags">
+                  <span>Graduate Algorithms</span>
+                  <span>Machine Learning</span>
+                  <span>Software & Systems Security</span>
+                  <span>Managing Data for ML</span>
+                  <span>Visualization for Data Science</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-card">
+          <div class="edu-card-top-bar"></div>
+          <div class="edu-card-inner">
+            <div class="edu-icon">
+              <a href="https://siddhartha.edu.in/" target="_blank">
+                <img src="assets/vrsec-logo.png" alt="VRSEC"/>
+              </a>
+            </div>
+            <div class="edu-content">
+              <div class="edu-top">
+                <div>
+                  <div class="edu-badges">
+                    <span class="edu-badge bachelor">Bachelor's</span>
+                    <span class="edu-badge completed">Completed</span>
+                  </div>
+                  <h3 class="edu-school">
+                    <a href="https://siddhartha.edu.in/" target="_blank">Velagapudi Ramakrishna Siddhartha Engineering College</a>
+                  </h3>
+                  <p class="edu-degree">Bachelor of Technology, Computer Science</p>
+                </div>
+                <div class="edu-meta">
+                  <span class="edu-date"><i class="fas fa-calendar"></i> Aug 2020 – May 2024</span>
+                  <span class="edu-gpa">GPA: 3.28 / 4.0</span>
+                  <span class="edu-location"><i class="fas fa-map-marker-alt"></i> Vijayawada, India</span>
+                </div>
+              </div>
+              <ul class="edu-highlights">
+                <li>Completed 2 industry internships — Machine Learning at Skill Dzire and Software Development at Boston Software Consultants.</li>
+                <li>Published 2 IEEE conference papers on asteroid classification using Boosting Algorithms and Neural Networks.</li>
+                <li>Graduated with strong foundation in DSA, DBMS, Machine Learning, and OOP — applied directly in real-world internship projects.</li>
+              </ul>
+              <div class="edu-courses">
+                <p class="courses-label">Relevant Coursework:</p>
+                <div class="course-tags">
+                  <span>Machine Learning</span>
+                  <span>Data Structures</span>
+                  <span>Probability & Statistics</span>
+                  <span>Advanced DSA</span>
+                  <span>Database Management Systems</span>
+                  <span>NoSQL Databases</span>
+                  <span>OOP with Python</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE SECTION -->
+  <section id="experience" class="section alt-bg">
+    <div class="section-container">
+      <div class="section-header fade-up">
+        <span class="section-index">02.</span>
+        <h2 class="section-title">Experience</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="exp-timeline fade-up">
+
+        <div class="exp-item">
+          <div class="exp-dot"></div>
+          <div class="exp-card">
+            <div class="exp-header">
+              <div>
+                <h3 class="exp-role">Machine Learning Intern</h3>
+                <p class="exp-company"><i class="fas fa-building"></i> Skill Dzire, India</p>
+              </div>
+              <span class="exp-date">Jan 2024 – Mar 2024</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Evaluated a YOLO-based object detection model on the BDD100K dataset across diverse real-world conditions including night driving, rain, and high-occlusion scenarios.</li>
+              <li>Conducted precision-recall analysis across pedestrians, vehicles, and cyclists — identifying class-level weaknesses for model optimization.</li>
+              <li>Delivered production readiness findings for real-time vehicle safety applications.</li>
+            </ul>
+            <div class="exp-tags">
+              <span>YOLO</span><span>BDD100K</span><span>Computer Vision</span><span>Python</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-dot"></div>
+          <div class="exp-card">
+            <div class="exp-header">
+              <div>
+                <h3 class="exp-role">Software Development Intern</h3>
+                <p class="exp-company"><i class="fas fa-building"></i> Boston Software Consultants India Pvt. Ltd.</p>
+              </div>
+              <span class="exp-date">Oct 2023 – Dec 2023</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Developed Python scripts to process and validate client data — detecting missing values, removing duplicates, and formatting records for backend storage.</li>
+              <li>Wrote optimized SQL queries for data retrieval and reporting modules.</li>
+              <li>Collaborated in Agile workflow to debug backend defects and ensure timely delivery.</li>
+            </ul>
+            <div class="exp-tags">
+              <span>Python</span><span>SQL</span><span>Agile</span><span>Data Validation</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="section">
+    <div class="section-container">
+      <div class="section-header fade-up">
+        <span class="section-index">03.</span>
+        <h2 class="section-title">Projects</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="projects-grid fade-up">
+
+        <!-- Project 1: Automated Data Cleaning Pipeline -->
+        <div class="project-card">
+          <div class="project-card-top-bar"></div>
+          <div class="project-content">
+            <div class="project-header">
+              <div class="project-icon"><i class="fas fa-database"></i></div>
+              <span class="project-year">2025</span>
+            </div>
+            <h3 class="project-title">Automated Data Cleaning Pipeline</h3>
+            <p class="project-desc">
+              Raw data is never clean — and cleaning it by hand doesn't scale. I built a distributed
+              pipeline using PySpark and Pandas that automatically detects and resolves missing values,
+              duplicates, outliers, and class imbalance. The result is a system that turns messy CSVs
+              into model-ready datasets, backed by an interactive Streamlit app for visual diagnostics.
+            </p>
+            <div class="project-highlights">
+              <div class="highlight-item"><i class="fas fa-check-circle"></i> Reduced RMSE from 150K+ to 0.215 after pipeline preprocessing</div>
+              <div class="highlight-item"><i class="fas fa-check-circle"></i> Boosted downstream model accuracy from 82.3% to 87.2%</div>
+              <div class="highlight-item"><i class="fas fa-check-circle"></i> Streamlit UI for CSV upload, report generation, and visual diagnostics</div>
+            </div>
+            <div class="project-tags">
+              <span>Python</span><span>PySpark</span><span>Pandas</span><span>Streamlit</span><span>scikit-learn</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Android Malware Detection -->
+        <div class="project-card">
+          <div class="project-card-top-bar"></div>
+          <div class="project-content">
+            <div class="project-header">
+              <div class="project-icon"><i class="fas fa-shield-alt"></i></div>
+              <span class="project-year">2025</span>
+            </div>
+            <h3 class="project-title">Android Malware Detection</h3>
+            <p class="project-desc">
+              With over 3 million Android apps in the Play Store, manual security review is impossible.
+              I built a binary classification neural network trained on the Drebin-215 dataset of 15,036
+              apps, using Androguard for real-time APK feature extraction. The system includes a Streamlit
+              scanner with custom risk scoring and plain-language explanations — making malware detection
+              accessible, not just accurate.
+            </p>
+            <div class="project-highlights">
+              <div class="highlight-item"><i class="fas fa-check-circle"></i> 98% accuracy and 98% F1-score on Drebin-215 benchmark</div>
+              <div class="highlight-item"><i class="fas fa-check-circle"></i> Real-time APK analysis via Androguard feature extraction</div>
+              <div class="highlight-item"><i class="fas fa-check-circle"></i> Explainable risk scoring with plain-language output for non-technical users</div>
+            </div>
+            <div class="project-tags">
+              <span>TensorFlow</span><span>Keras</span><span>Androguard</span><span>Streamlit</span><span>Python</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: US Crime Data Visualization -->
+        <div class="project-card">
+          <div class="project-card-top-bar"></div>
+          <div class="project-content">
+            <div class="project-header">
+              <div class="project-icon"><i class="fas fa-map"></i></div>
+              <span class="project-year">2024</span>
+            </div>
+            <h3 class="project-title">US Crime Data Visualization</h3>
+            <p class="project-desc">
+              Crime patterns are buried in spreadsheets most people can't read. I built an interactive
+              choropleth map using D3.js that makes 20 years of US crime data explorable — state by
+              state, category by category, year by year. Radar and Polar Area charts let users compare
+              multiple crime types side-by-side for deeper pattern recognition.
+            </p>
+            <div class="project-highlights">
+              <div class="highlight-item"><i class="fas fa-check-circle"></i> 20 years of data (2000–2019) across 7 crime categories</div>
+              <div class="highlight-item"><i class="fas fa-check-circle"></i> Interactive choropleth map with state-level drill-down</div>
+              <div class="highlight-item"><i class="fas fa-check-circle"></i> Radar and Polar Area charts for multi-category comparison</div>
+            </div>
+            <div class="project-tags">
+              <span>D3.js</span><span>JavaScript</span><span>HTML</span><span>CSS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: SAR Image Classification -->
+        <div class="project-card">
+          <div class="project-card-top-bar"></div>
+          <div class="project-content">
+            <div class="project-header">
+              <div class="project-icon"><i class="fas fa-satellite"></i></div>
+              <span class="project-year">2024</span>
+            </div>
+            <h3 class="project-title">SAR Image Classification with Swin Transformers</h3>
+            <p class="project-desc">
+              Synthetic Aperture Radar images are notoriously noisy and difficult to classify — traditional
+              CNNs struggle with their speckle patterns and complex textures. I applied Swin Transformers,
+              a hierarchical vision model built for exactly this kind of challenge, to classify SAR imagery
+              into terrain and target categories. The model significantly outperformed CNN baselines by
+              capturing long-range spatial dependencies that convolutions miss.
+            </p>
+            <div class="project-highlights">
+              <div class="highlight-item"><i class="fas fa-check-circle"></i> Swin Transformer outperformed CNN baseline on SAR classification</div>
+              <div class="highlight-item"><i class="fas fa-check-circle"></i> Handled speckle noise and complex texture patterns specific to radar imagery</div>
+              <div class="highlight-item"><i class="fas fa-check-circle"></i> Evaluated on multi-class terrain and target recognition datasets</div>
+            </div>
+            <div class="project-tags">
+              <span>Swin Transformer</span><span>PyTorch</span><span>Computer Vision</span><span>Python</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5: Asteroid Family Classification (IEEE 2024) -->
+        <div class="project-card">
+          <div class="project-card-top-bar"></div>
+          <div class="project-content">
+            <div class="project-header">
+              <div class="project-icon"><i class="fas fa-meteor"></i></div>
+              <span class="project-year">2024</span>
+            </div>
+            <h3 class="project-title">Asteroid Family Classification — IEEE 2024</h3>
+            <p class="project-desc">
+              Classifying asteroid families from orbital and spectral data is a high-dimensional problem
+              where traditional models underfit. I applied ensemble boosting algorithms — XGBoost and
+              LightGBM — to an astronomical dataset, carefully tuning hyperparameters and feature selection
+              to achieve classification results strong enough to be accepted and published at the Asia
+              Pacific Conference on Innovation in Technology, IEEE 2024.
+            </p>
+            <div class="project-highlights">
+              <div class="highlight-item"><i class="fas fa-check-circle"></i> Published at IEEE APCIT 2024 — peer-reviewed research</div>
+              <div class="highlight-item"><i class="fas fa-check-circle"></i> XGBoost and LightGBM ensemble outperformed traditional classifiers</div>
+              <div class="highlight-item"><i class="fas fa-check-circle"></i> Feature engineering on multi-dimensional orbital and spectral data</div>
+            </div>
+            <div class="project-tags">
+              <span>XGBoost</span><span>LightGBM</span><span>scikit-learn</span><span>Python</span><span>IEEE</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6: Hazardous Asteroid Detection (IEEE 2023) -->
+        <div class="project-card">
+          <div class="project-card-top-bar"></div>
+          <div class="project-content">
+            <div class="project-header">
+              <div class="project-icon"><i class="fas fa-exclamation-triangle"></i></div>
+              <span class="project-year">2023</span>
+            </div>
+            <h3 class="project-title">Hazardous Asteroid Detection — IEEE 2023</h3>
+            <p class="project-desc">
+              Detecting potentially hazardous asteroids is a safety-critical classification problem — but
+              the data is severely imbalanced, with dangerous asteroids being rare. I combined an Artificial
+              Neural Network with SMOTE oversampling to address this directly, training a model that could
+              reliably identify hazardous objects even when they make up a tiny fraction of the dataset.
+              Published at the Global Conference on Information Technologies and Communications, IEEE 2023.
+            </p>
+            <div class="project-highlights">
+              <div class="highlight-item"><i class="fas fa-check-circle"></i> Published at IEEE GCITC 2023 — peer-reviewed research</div>
+              <div class="highlight-item"><i class="fas fa-check-circle"></i> SMOTE oversampling resolved severe class imbalance in hazardous asteroid data</div>
+              <div class="highlight-item"><i class="fas fa-check-circle"></i> ANN model achieved high recall on the minority hazardous class</div>
+            </div>
+            <div class="project-tags">
+              <span>Neural Networks</span><span>SMOTE</span><span>TensorFlow</span><span>Python</span><span>IEEE</span>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+</div>
+  <!-- PUBLICATIONS SECTION -->
+  <section id="publications" class="section alt-bg">
+    <div class="section-container">
+      <div class="section-header fade-up">
+        <span class="section-index">04.</span>
+        <h2 class="section-title">Publications</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="pub-list fade-up">
+
+        <div class="pub-card">
+          <div class="pub-card-inner">
+            <div class="pub-icon">
+              <img src="assets/ieee-logo.jpg" alt="IEEE"/>
+            </div>
+            <div class="pub-content">
+              <div class="pub-top">
+                <h3 class="pub-title">Asteroid Family Classification using Boosting Algorithms</h3>
+                <span class="pub-year">2024</span>
+              </div>
+              <p class="pub-authors">A. Sai Vignesh, T. Meena, M. Sai Pravardhitha, M. Sam Kennanya</p>
+              <p class="pub-desc">
+                Applied ensemble boosting algorithms including XGBoost and LightGBM to classify
+                asteroid families from astronomical datasets. Presented at the Asia Pacific
+                Conference on Innovation in Technology, IEEE 2024.
+              </p>
+              <div class="pub-tags">
+                <span>XGBoost</span>
+                <span>LightGBM</span>
+                <span>Asteroid Classification</span>
+                <span>Machine Learning</span>
+                <span>IEEE</span>
+              </div>
+              <div class="pub-actions">
+                <a href="https://ieeexplore.ieee.org/document/10673673" target="_blank" class="pub-btn-primary">
+                  <i class="fas fa-external-link-alt"></i> Read Full Paper
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-card-inner">
+            <div class="pub-icon">
+              <img src="assets/ieee-logo.jpg" alt="IEEE"/>
+            </div>
+            <div class="pub-content">
+              <div class="pub-top">
+                <h3 class="pub-title">Classification of Potentially Hazardous Asteroids Using Artificial Neural Networks and Over Sampling Techniques</h3>
+                <span class="pub-year">2023</span>
+              </div>
+              <p class="pub-authors">M. Sam Kennanya, T. Meena, M. Sai Pravardhitha, A. Sai Vignesh</p>
+              <p class="pub-desc">
+                Built a neural network model to classify potentially hazardous asteroids using
+                ANN combined with SMOTE oversampling to handle class imbalance. Presented at
+                the Global Conference on Information Technologies and Communications, IEEE 2023.
+              </p>
+              <div class="pub-tags">
+                <span>Neural Networks</span>
+                <span>SMOTE</span>
+                <span>Asteroid Detection</span>
+                <span>Deep Learning</span>
+                <span>IEEE</span>
+              </div>
+              <div class="pub-actions">
+                <a href="https://ieeexplore.ieee.org/document/10426106/" target="_blank" class="pub-btn-primary">
+                  <i class="fas fa-external-link-alt"></i> Read Full Paper
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section id="skills" class="section">
+    <div class="section-container">
+      <div class="section-header fade-up">
+        <span class="section-index">05.</span>
+        <h2 class="section-title">Skills</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="skills-container fade-up">
+
+        <div class="skill-group">
+          <h3 class="skill-group-title"><i class="fas fa-code"></i> Languages</h3>
+          <div class="skill-tags-wrap">
+            <div class="skill-pill"><i class="fab fa-python"></i> Python</div>
+            <div class="skill-pill"><i class="fab fa-java"></i> Java</div>
+            <div class="skill-pill"><i class="fas fa-copyright"></i> C++</div>
+            <div class="skill-pill"><i class="fas fa-database"></i> SQL</div>
+            <div class="skill-pill"><i class="fas fa-copyright"></i> C</div>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-group-title"><i class="fas fa-brain"></i> ML / AI</h3>
+          <div class="skill-tags-wrap">
+            <div class="skill-pill"><i class="fas fa-fire"></i> TensorFlow</div>
+            <div class="skill-pill"><i class="fas fa-fire"></i> Keras</div>
+            <div class="skill-pill"><i class="fas fa-chart-bar"></i> scikit-learn</div>
+            <div class="skill-pill"><i class="fas fa-bolt"></i> XGBoost</div>
+            <div class="skill-pill"><i class="fas fa-bolt"></i> LightGBM</div>
+            <div class="skill-pill"><i class="fas fa-table"></i> Pandas</div>
+            <div class="skill-pill"><i class="fas fa-calculator"></i> NumPy</div>
+            <div class="skill-pill"><i class="fas fa-stream"></i> PySpark</div>
+            <div class="skill-pill"><i class="fas fa-mobile-alt"></i> Androguard</div>
+            <div class="skill-pill"><i class="fas fa-chart-line"></i> Streamlit</div>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-group-title"><i class="fas fa-layer-group"></i> Frontend & Backend</h3>
+          <div class="skill-tags-wrap">
+            <div class="skill-pill"><i class="fab fa-react"></i> React</div>
+            <div class="skill-pill"><i class="fab fa-html5"></i> HTML</div>
+            <div class="skill-pill"><i class="fab fa-css3-alt"></i> CSS</div>
+            <div class="skill-pill"><i class="fab fa-js"></i> JavaScript</div>
+            <div class="skill-pill"><i class="fab fa-node-js"></i> Node.js</div>
+            <div class="skill-pill"><i class="fas fa-server"></i> Express.js</div>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-group-title"><i class="fas fa-database"></i> Databases</h3>
+          <div class="skill-tags-wrap">
+            <div class="skill-pill"><i class="fas fa-database"></i> MySQL</div>
+            <div class="skill-pill"><i class="fas fa-leaf"></i> MongoDB</div>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-group-title"><i class="fas fa-tools"></i> Tools</h3>
+          <div class="skill-tags-wrap">
+            <div class="skill-pill"><i class="fab fa-docker"></i> Docker</div>
+            <div class="skill-pill"><i class="fab fa-git-alt"></i> Git</div>
+            <div class="skill-pill"><i class="fab fa-github"></i> GitHub</div>
+            <div class="skill-pill"><i class="fas fa-book"></i> Jupyter</div>
+            <div class="skill-pill"><i class="fab fa-google"></i> Google Colab</div>
+            <div class="skill-pill"><i class="fas fa-flask"></i> SMOTE</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="section alt-bg">
+    <div class="section-container">
+      <div class="section-header fade-up">
+        <span class="section-index">06.</span>
+        <h2 class="section-title">Contact Me</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="contact-wrap fade-up">
+        <div class="contact-left">
+          <p class="contact-intro">I'm open to full-time opportunities, research collaborations, and exciting projects. Whether you have a question or just want to say hi — my inbox is always open!</p>
+          <div class="contact-info-list">
+            <div class="contact-info-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <span class="ci-label">Email</span>
+                <span class="ci-val">allurisaijobs15@gmail.com</span>
+                <button class="copy-btn" data-copy="allurisaijobs15@gmail.com" title="Copy"><i class="fas fa-copy"></i></button>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <span class="ci-label">Location</span>
+                <span class="ci-val">Salt Lake City, Utah, USA</span>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <i class="fas fa-phone"></i>
+              <div>
+                <span class="ci-label">Phone</span>
+                <span class="ci-val">+1 (385) 362-9855</span>
+              </div>
+            </div>
+          </div>
+          <div class="contact-socials">
+            <a href="https://github.com/allurisai" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="mailto:allurisaijobs15@gmail.com"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+        <div class="contact-form-wrap">
+          <form class="contact-form" id="contactForm">
+            <div class="form-row">
+              <input type="text" placeholder="Your Name" required class="form-input"/>
+              <input type="email" placeholder="Your Email" required class="form-input"/>
+            </div>
+            <input type="text" placeholder="Subject" class="form-input"/>
+            <textarea placeholder="Your Message" rows="6" required class="form-input"></textarea>
+            <button type="submit" class="btn-primary full-width">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>Designed & Built by <span class="accent">Sai Vignesh Alluri</span> · 2026</p>
+    <p class="footer-sub">Salt Lake City, UT · Open to Opportunities</p>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button id="backToTop" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+  <!-- TOAST -->
+  <div id="toast" class="toast hidden"></div>
+
+  <!-- AUDIO -->
+  <audio id="bgMusic" loop>
+    <source src="assets/music.mp3" type="audio/mpeg"/>
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
