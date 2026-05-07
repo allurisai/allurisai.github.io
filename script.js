@@ -5,8 +5,7 @@ window.addEventListener('load', () => {
   setTimeout(() => {
     document.getElementById('loader').classList.add('hidden');
     startTyping();
-    initParticles();
-  }, 2000);
+  }, 60);
 });
 
 // ===========================
@@ -36,40 +35,47 @@ window.addEventListener('scroll', () => {
 });
 
 // ===========================
-// PAGE-BASED NAVIGATION
+// SMOOTH SECTION NAVIGATION
 // ===========================
-function showPage(id) {
-  document.querySelectorAll('.section, .hero').forEach(sec => {
-    sec.classList.remove('active-page');
-  });
+const sectionLinks = document.querySelectorAll('a[href^="#"]');
+const navTargets = document.querySelectorAll('.hero, .section');
+const navItems = document.querySelectorAll('.nav-link, .mob-link');
 
-  const target = document.querySelector(id);
-  if (target) {
-    target.classList.add('active-page');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  document.querySelectorAll('.nav-link, .mob-link').forEach(link => {
-    link.classList.remove('active');
-    if (link.getAttribute('href') === id) {
-      link.classList.add('active');
-    }
-  });
-
-  document.getElementById('mobileMenu').classList.remove('open');
-}
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+sectionLinks.forEach(anchor => {
   anchor.addEventListener('click', e => {
-    e.preventDefault();
     const href = anchor.getAttribute('href');
-    if (href && href.length > 1) {
-      showPage(href);
-    }
+    if (!href || href.length <= 1) return;
+
+    const target = document.querySelector(href);
+    if (!target) return;
+
+    e.preventDefault();
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.getElementById('mobileMenu').classList.remove('open');
   });
 });
 
-showPage('#about');
+function updateActiveNav() {
+  const scrollPosition = window.scrollY + 140;
+  let activeId = '#about';
+
+  navTargets.forEach(section => {
+    const top = section.offsetTop;
+    const bottom = top + section.offsetHeight;
+
+    if (scrollPosition >= top && scrollPosition < bottom) {
+      activeId = `#${section.id}`;
+    }
+  });
+
+  navItems.forEach(link => {
+    link.classList.toggle('active', link.getAttribute('href') === activeId);
+  });
+}
+
+window.addEventListener('scroll', updateActiveNav);
+window.addEventListener('load', updateActiveNav);
+updateActiveNav();
 
 // ===========================
 // HAMBURGER MENU
@@ -90,6 +96,9 @@ document.querySelectorAll('.mob-link').forEach(link => {
 // ===========================
 const themeToggle = document.getElementById('themeToggle');
 let currentTheme = localStorage.getItem('portfolio-theme') || 'dark';
+if (!['dark', 'light'].includes(currentTheme)) {
+  currentTheme = 'dark';
+}
 applyTheme(currentTheme);
 
 themeToggle.addEventListener('click', () => {
@@ -227,118 +236,9 @@ document.getElementById('contactForm').addEventListener('submit', (e) => {
 // ===========================
 function initParticles() {
   const canvas = document.getElementById('particleCanvas');
-  const ctx    = canvas.getContext('2d');
-  let particles = [];
-  let mouse = { x: null, y: null };
-
-  function resize() {
-    canvas.width  = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
+  if (canvas) {
+    canvas.style.display = 'none';
   }
-  resize();
-
-  window.addEventListener('resize', () => {
-    resize();
-    createParticles();
-  });
-
-  window.addEventListener('mousemove', e => {
-    const rect = canvas.getBoundingClientRect();
-    mouse.x = e.clientX - rect.left;
-    mouse.y = e.clientY - rect.top;
-  });
-
-  window.addEventListener('mouseleave', () => {
-    mouse.x = null;
-    mouse.y = null;
-  });
-
-  function getAccentColor() {
-    return getComputedStyle(document.documentElement)
-      .getPropertyValue('--accent').trim() || '#2a7fff';
-  }
-
-  class Particle {
-    constructor() { this.reset(); }
-
-    reset() {
-      this.x       = Math.random() * canvas.width;
-      this.y       = Math.random() * canvas.height;
-      this.size    = Math.random() * 1.5 + 0.4;
-      this.speedX  = (Math.random() - 0.5) * 0.35;
-      this.speedY  = (Math.random() - 0.5) * 0.35;
-      this.opacity = Math.random() * 0.5 + 0.1;
-    }
-
-    update() {
-      this.x += this.speedX;
-      this.y += this.speedY;
-
-      // Mouse repel effect
-      if (mouse.x !== null && mouse.y !== null) {
-        const dx   = mouse.x - this.x;
-        const dy   = mouse.y - this.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 120) {
-          this.x -= dx * 0.018;
-          this.y -= dy * 0.018;
-        }
-      }
-
-      // Bounce off walls
-      if (this.x < 0 || this.x > canvas.width)  this.speedX *= -1;
-      if (this.y < 0 || this.y > canvas.height)  this.speedY *= -1;
-    }
-
-    draw() {
-      ctx.save();
-      ctx.globalAlpha = this.opacity;
-      ctx.fillStyle   = getAccentColor();
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.restore();
-    }
-  }
-
-  function createParticles() {
-    particles = [];
-    const count = Math.floor((canvas.width * canvas.height) / 12000);
-    for (let i = 0; i < Math.min(count, 80); i++) {
-      particles.push(new Particle());
-    }
-  }
-  createParticles();
-
-  function drawConnections() {
-    const accent = getAccentColor();
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx   = particles[i].x - particles[j].x;
-        const dy   = particles[i].y - particles[j].y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 110) {
-          ctx.save();
-          ctx.globalAlpha = (1 - dist / 110) * 0.12;
-          ctx.strokeStyle  = accent;
-          ctx.lineWidth    = 0.5;
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.stroke();
-          ctx.restore();
-        }
-      }
-    }
-  }
-
-  function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => { p.update(); p.draw(); });
-    drawConnections();
-    requestAnimationFrame(animate);
-  }
-  animate();
 }
 
 // ===========================
@@ -352,4 +252,3 @@ window.addEventListener('scroll', () => {
     nav.style.boxShadow = 'none';
   }
 });
-

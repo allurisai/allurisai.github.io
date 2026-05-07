@@ -4,9 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sai Vignesh Alluri | Portfolio</title>
+  <link rel="preload" as="image" href="assets/vignesh-portfolio-hero.jpg" fetchpriority="high"/>
   <link rel="stylesheet" href="style.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 </head>
 <body>
 
@@ -37,6 +38,9 @@
 
   <!-- NAVBAR -->
   <nav id="navbar">
+    <a href="#about" class="nav-logo" aria-label="Go to home">
+      <span class="logo-bracket">[</span>S V A<span class="logo-bracket">]</span>
+    </a>
     <ul class="nav-links">
       <li><a href="#about" class="nav-link">About</a></li>
       <li><a href="#education" class="nav-link">Education</a></li>
@@ -79,74 +83,130 @@
 
   <!-- HERO SECTION -->
   <section id="about" class="hero active-page">
+    <div class="hero-backdrop" aria-hidden="true">
+      <img src="assets/vignesh-portfolio-hero.jpg" alt="" class="hero-backdrop-image" fetchpriority="high"/>
+      <div class="hero-backdrop-glow hero-backdrop-glow-left"></div>
+      <div class="hero-backdrop-glow hero-backdrop-glow-right"></div>
+      <div class="hero-backdrop-vignette"></div>
+    </div>
     <canvas id="particleCanvas"></canvas>
+    <div class="hero-noise" aria-hidden="true"></div>
 
-    <div class="hero-content fade-up">
-      <div class="hero-greeting-wrap">
-        <span class="hero-greeting">Hi, I'm</span>
-      </div>
-      <h1 class="hero-name">
-        <span id="typedName"></span>
-      </h1>
-      <h2 class="hero-subtitle">Master's CS Student · ML · SWE · Data Science</h2>
-      <p class="hero-bio">
-        I started with a curiosity for how things work and turned it into a Computer Science
-        degree, two industry internships, and two published IEEE research papers — all before
-        finishing my Bachelor's. Now I'm at the University of Utah completing my Master's,
-        building across software engineering, machine learning, data science, and full-stack
-        development. I take ownership of what I build, I move fast without cutting corners,
-        and I thrive when I'm surrounded by people who push each other to do better work.
-        I'm looking for a team where I can contribute from day one and keep raising the bar.
-      </p>
+    <div class="hero-shell">
+      <div class="hero-watermark" aria-hidden="true">ALLURI</div>
 
-      <div class="hero-socials">
-        <a href="https://github.com/allurisai" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="mailto:allurisaijobs15@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-      </div>
+      <div class="hero-content fade-up">
+        <div class="hero-greeting-wrap">
+          <span class="hero-kicker">Late-night builder</span>
+          <span class="hero-greeting">Hi, I'm</span>
+        </div>
+        <h1 class="hero-name">
+          <span id="typedName"></span>
+        </h1>
+        <h2 class="hero-subtitle">Software engineer and ML builder creating full-stack products, data systems, and applied intelligence.</h2>
+        <p class="hero-bio">
+          I build software that solves real problems, from backend workflows and interactive web products
+          to machine learning systems and data-driven tools. Right now I am pursuing my Master's in Computer
+          Science at the University of Utah and growing across software engineering, machine learning, data,
+          and product-minded development.
+        </p>
 
-      <div class="hero-actions">
-        <a href="#contact" class="btn-primary">
-          <i class="fas fa-envelope"></i> Get in Touch
-        </a>
-        <a href="assets/resume.pdf" download="Sai_Vignesh_Resume.pdf" class="btn-secondary">
-          <i class="fas fa-download"></i> Download Resume
-        </a>
-      </div>
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary">
+            <i class="fas fa-arrow-right"></i> View Selected Work
+          </a>
+          <a href="assets/resume.pdf" download="Sai_Vignesh_Resume.pdf" class="btn-secondary">
+            <i class="fas fa-download"></i> Download Resume
+          </a>
+        </div>
 
-      <div class="hero-tech">
-        <p class="hero-tech-label">TECHNOLOGIES</p>
-        <div class="hero-tech-icons">
-          <div class="tech-icon" title="Python">
-            <i class="fab fa-python"></i>
-            <span>Python</span>
+        <div class="hero-socials">
+          <a href="https://github.com/allurisai" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="mailto:allurisaijobs15@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+
+        <div class="hero-tech">
+          <p class="hero-tech-label">Core stack</p>
+          <div class="hero-tech-icons">
+            <div class="tech-icon" title="Python">
+              <i class="fab fa-python"></i>
+              <span>Python</span>
+            </div>
+            <div class="tech-icon" title="TensorFlow">
+              <i class="fas fa-brain"></i>
+              <span>TensorFlow</span>
+            </div>
+            <div class="tech-icon" title="React">
+              <i class="fab fa-react"></i>
+              <span>React</span>
+            </div>
+            <div class="tech-icon" title="Node.js">
+              <i class="fab fa-node-js"></i>
+              <span>Node.js</span>
+            </div>
+            <div class="tech-icon" title="Docker">
+              <i class="fab fa-docker"></i>
+              <span>Docker</span>
+            </div>
+            <div class="tech-icon" title="GitHub">
+              <i class="fab fa-github"></i>
+              <span>Git</span>
+            </div>
           </div>
-          <div class="tech-icon" title="TensorFlow">
-            <i class="fas fa-brain"></i>
-            <span>TensorFlow</span>
+        </div>
+
+        <div class="avail-inline">
+          <span class="avail-dot"></span> Open to Work · Full Time · Software Engineering / ML
+        </div>
+
+        <div class="hero-bottom-strip fade-up">
+          <div class="hero-bottom-item">
+            <span class="hero-bottom-label">Focus</span>
+            <span class="hero-bottom-value">Software engineering, machine learning, data products</span>
           </div>
-          <div class="tech-icon" title="React">
-            <i class="fab fa-react"></i>
-            <span>React</span>
-          </div>
-          <div class="tech-icon" title="Node.js">
-            <i class="fab fa-node-js"></i>
-            <span>Node.js</span>
-          </div>
-          <div class="tech-icon" title="Docker">
-            <i class="fab fa-docker"></i>
-            <span>Docker</span>
-          </div>
-          <div class="tech-icon" title="GitHub">
-            <i class="fab fa-github"></i>
-            <span>Git</span>
+          <div class="hero-bottom-item">
+            <span class="hero-bottom-label">Approach</span>
+            <span class="hero-bottom-value">Strong engineering fundamentals with research-backed problem solving</span>
           </div>
         </div>
       </div>
 
-      <div class="avail-inline">
-        <span class="avail-dot"></span> Open to Work · Entry Level · Full Time
-      </div>
+      <aside class="hero-stage fade-up">
+        <div class="hero-stage-frame">
+          <div class="hero-stage-topline">
+            <span class="hero-stage-chip">Portfolio Scene 01</span>
+            <span class="hero-stage-time">Salt Lake City, UT</span>
+          </div>
+          <div class="hero-stage-portrait">
+            <img src="assets/vignesh-portfolio-hero.jpg" alt="Sai Vignesh Alluri working on a laptop" class="hero-stage-image" loading="eager" fetchpriority="high"/>
+          </div>
+          <p class="hero-stage-note">
+            A builder across software, machine learning, and product systems with equal interest in shipping
+            reliable applications and solving complex technical problems.
+          </p>
+          <div class="hero-stage-stats">
+            <div class="hero-stat">
+              <span class="hero-stat-value">2</span>
+              <span class="hero-stat-label">IEEE papers</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-value">2</span>
+              <span class="hero-stat-label">Internships</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-value">MS</span>
+              <span class="hero-stat-label">Utah CS</span>
+            </div>
+          </div>
+        </div>
 
+        <div class="hero-quicknav">
+          <a href="#experience" class="hero-quicknav-link">Experience</a>
+          <a href="#projects" class="hero-quicknav-link">Projects</a>
+          <a href="#publications" class="hero-quicknav-link">Publications</a>
+          <a href="#contact" class="hero-quicknav-link">Contact</a>
+        </div>
+      </aside>
     </div>
 
     <div class="scroll-hint"><i class="fas fa-chevron-down"></i></div>
@@ -323,6 +383,43 @@
         <div class="section-line"></div>
       </div>
       <div class="projects-grid fade-up">
+
+        <!-- Project 0: TaxCopilot -->
+        <div class="project-card">
+          <div class="project-card-top-bar"></div>
+          <div class="project-content">
+            <div class="project-header">
+              <div class="project-icon"><i class="fas fa-robot"></i></div>
+              <span class="project-year">2025</span>
+            </div>
+            <h3 class="project-title">TaxCopilot — Internal AI Assistant for Tax &amp; Bookkeeping Teams</h3>
+            <p class="project-desc">
+              A deployed AI system built for tax and bookkeeping teams, combining five purpose-built
+              modules into one unified assistant. It handles semantic document search with source-backed
+              answers, bookkeeping transaction review, client communication generation, strategy content
+              creation, and workflow automations — all grounded in internal documents and accessible
+              from anywhere via cloud deployment.
+            </p>
+            <div class="project-highlights">
+              <div class="highlight-item"><i class="fas fa-check-circle"></i> Semantic document search with confidence scoring and proof snippets from source docs</div>
+              <div class="highlight-item"><i class="fas fa-check-circle"></i> Bookkeeping automation: duplicate detection, category suggestions, and data cleanup</div>
+              <div class="highlight-item"><i class="fas fa-check-circle"></i> Client report and email generation grounded in internal documents</div>
+              <div class="highlight-item"><i class="fas fa-check-circle"></i> Strategy content workflows for newsletters, explainers, and social posts</div>
+              <div class="highlight-item"><i class="fas fa-check-circle"></i> Cloud-deployed on Streamlit Community Cloud — accessible to anyone with the link</div>
+            </div>
+            <div class="project-tags">
+              <span>Python</span><span>Streamlit</span><span>FAISS</span><span>Sentence-Transformers</span><span>Ollama</span><span>Groq API</span><span>LLM</span>
+            </div>
+            <div class="project-links">
+              <a href="https://taxops-ai-copilot-kqeifkhcnpr6pjkytxypnk.streamlit.app" target="_blank" class="project-link-btn">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+              <a href="https://github.com/allurisai/taxops-ai-copilot" target="_blank" class="project-link-btn project-link-gh">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
 
         <!-- Project 1: Automated Data Cleaning Pipeline -->
         <div class="project-card">
